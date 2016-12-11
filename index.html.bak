@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Page Title</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"/>
+    <link rel="stylesheet" href="http://demos.jquerymobile.com/1.4.5/_assets/css/jqm-demos.css"/>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script type="text/javascript">
+
+        $(function () {
+            $("[data-role=panel]").panel().enhanceWithin();
+            $("[data-role=popup]").popup().enhanceWithin();
+
+
+
+            /*
+             $(document).on('pagebeforeshow', function() {
+             alert($.mobile.activePage.attr('id'));
+             });
+             */
+            $(document).on('click', 'a[id^="imgtrig"]', poppop);
+            function poppop() {
+
+
+                var pageid = ($.mobile.activePage.attr('id'));
+                var imgobj = $(this).children("img");
+                var imgsrc = imgobj.attr('src');
+                /*
+                 var popi=$('#popupBasic').children("img");;
+                 popi.attr('src',imgsrc);*/
+                $("#popupBasic").html("<img id='popimg' src='" + imgsrc + "' />");
+
+                $("#popupBasic").enhanceWithin().popup("open");
+            }
+
+         });
+    </script>
+
+</head>
+<body>
+
+
+<div data-role="page" id="week123" data-quicklinks="true">
+<!--
+    <div data-role="panel" id="leftpanel" data-position="left" >
+        <div class="jqm-navmenu-panel jqm-panel-page-nav">
+            <ul data-role="listview" data-role="listview" data-inset="false" data-divider-theme="a"
+                data-icon="false" jqm-list ui-alt-icon ui-nodisc-icon
+                ui-listviewclass="jqm-list ui-listview ui-group-theme-a">
+                <li><a href="#week123">Week 1, 2, 3</a></li>
+                <li><a href="#week456">Week 4, 5, 6</a></li>
+                <li><a href="#week789">Week 7, 8, 9</a></li>
+                <li><a href="#week101112">Week 10, 11, 12</a></li>
+            </ul>
+        </div>
+    </div>-->
+    <!-- /panel -->
+
+
+    <div data-role="header" class="jqm-header ui-header ui-bar-inherit">
+        <a href='#leftpanel' data-icon='bars' data-iconpos='notext'>Menu</a>
+
+        <h1>WEEK: 1 2 3</h1>
+    </div>
+    <!-- /header -->
+
+    <div role="main" class="ui-content jqm-content">
+        <p> Five minutes of light cardio to warm up. Train heavy, but don't train to failure</p>
+        <ul data-role="listview">
+            <li data-role="collapsible" data-iconpos="left" data-shadow="false" data-corners="false">
+                    <h2>Monday</h2>
+                <ul data-role="listview" data-shadow="false" data-corners="false">
+                    <li><a href="#" id="imgtrig1"><img src="images/squat.jpg">
+
+                        <h2>Squats</h2>
+
+                        <p>5 x 5 (Do a couple warm up sets first) </p></a></li>
+                    <li><a href="#" id="imgtrig2"> <img src="images/dead.jpg">
+
+                        <h2>Dead Lifts</h2>
+
+                        <p>5 x 5 (Do a couple warm up sets first) </p></a></li>
+                    <li><a href="#" id="imgtrig111"> <img src="images/calf.jpg">
+
+                        <h2>Standing calf raise </h2>
+
+                        <p> 5 x 10 </p></a></li>
+                    <li><a href="#" id="imgtrig1111"> <img src="images/legraise.jpg">
+
+                        <h2>Leg raises </h2>
+
+                        <p> 5 x 10 </p></a></li>
+                    <li><a href="#" id="imgtrig11111"> <img src="images/situp.jpg">
+
+                        <h2>Incline sit ups </h2>
+
+                        <p> 3 x 10-20 </p></a></li>
+                </ul>
+            </li>
+
+            <li data-role="collapsible" data-iconpos="left" data-shadow="false" data-corners="false">
+                    <h2>Tuesday</h2>
+                <ul data-role="listview" data-shadow="false" data-corners="false">
+                    <li><a href="#" id="imgtrig12"><img src="images/incline.jpg">
+
+                        <h2>Incline barbell bench press </h2>
+
+                        <p> 5 X 5 (do a couple warm up sets first) </p></a></li>
+                    <li><a href="#" id="imgtrig22"><img src="images/sdbpress.jpg">
+
+                        <h2>Seated dumbbell shoulder press</h2>
+
+                        <p> 5 X 8 </p></a></li>
+                    <li><a href="#" id="imgtrig222"><img src="images/cablecurl.jpg">
+
+                        <h2>Bicep cable curls (from low pulley)</h2>
+
+                        <p> 5 X 10 </p></a></li>
+                    <li><a href="#" id="imgtrig2222"><img src="images/pushdowns.jpg">
+
+                        <h2>Tricep push downs (using straight bar attachment)</h2>
+
+                        <p> 5 X 10 </p></a></li>
+                    <li><a href="#" id="imgtrig22222"><img src="images/bentlat.jpg">
+
+                        <h2>Bent over dumbbell lateral raises <p> 3 X 10-15</h2>
+                        </p></a></li>
+                </ul>
+            </li>
+
+            <li data-role="collapsible" data-iconpos="left" data-shadow="false" data-corners="false">
+                    <h2>Thursday</h2>
+                <ul data-role="listview" data-shadow="false" data-corners="false">
+
+                    <li><a href="#" id="imgtrig3"><img src="images/legpress.jpg">
+
+                        <h2>Leg press</h2>
+
+                        <p>do a couple warm up sets first - 4 X 15</p></a></li>
+                    <li><a href="#" id="imgtrig33"><img src="images/legcurls.jpg">
+
+                        <h2>Leg curls</h2>
+
+                        <p>4 X 15</p></a></li>
+                    <li><a href="#" id="imgtrig333"><img src="images/pulldowns.jpg">
+
+                        <h2>Wide grip pull downs</h2>
+
+                        <p>4 X 15</p></a></li>
+                    <li><a href="#" id="imgtrig3333"><img src="images/hypers.jpg">
+
+                        <h2>Hyper extensions</h2>
+
+                        <p>4 X 10</p></a></li>
+                    <li><a href="#" id="imgtrig33333"><img src="images/pullabs.jpg">
+
+                        <h2>Pull down ab crunches</h2>
+
+                        <p>4 X 15</p></a></li>
+                </ul>
+            </li>
+
+            <li data-role="collapsible" data-iconpos="left" data-shadow="false" data-corners="false">
+                    <h2>Friday</h2>
+                <ul data-role="listview" data-shadow="false" data-corners="false">
+                    <li><a href="#" id="imgtrig4"><img src="images/inclinedb.jpg">
+
+                        <h2>Incline dumbbell bench press</h2>
+
+                        <p>do a couple warm up sets first - 4 X 10</p></a></li>
+                    <li><a href="#" id="imgtrig44"><img src="images/sidelat.jpg">
+
+                        <h2>Dumbbell side lateral raises</h2>
+
+                        <p>4 X 10</p></a></li>
+                    <li><a href="#" id="imgtrig444"><img src="images/dbcurls.jpg">
+
+                        <h2>Bicep dumbbell curls</h2>
+
+                        <p>4 X 12</p></a></li>
+                    <li><a href="#" id="imgtrig4444"><img src="images/pushdowns.jpg">
+
+                        <h2>Tricep push downs</h2>(with rope attachment) <br> - 4 X 12</p></a></li>
+                    <li><a href="#" id="imgtrig44444"><img src="images/uprightrow.jpg">
+
+                        <h2>Barbell upright rows</h2>
+
+                        <p>3 X 15</p></a></li>
+                </ul>
+            </li>
+
+        </ul>
+    </div>
+    <!-- /content -->
+
+    <div data-role="footer">
+        <h4>Page Footer</h4>
+    </div>
+    <!-- /footer -->
+
+</div>
+<!-- /page -->
+
+
+<!-- Start of second page: #two -->
+<div data-role="page" id="week456" data-quicklinks="true">
+    <!--
+        <div data-role="popup" id="popupBasic" data-theme="a"> <p>   popup contents</p> </div>
+    -->
+
+    <div data-role="header" class="jqm-header ui-header ui-bar-inherit">
+        <a href='#leftpanel' data-icon='bars' data-iconpos='notext'>Menu</a>
+
+        <h1>WEEK: 4 5 6</h1>
+    </div>
+    <!-- /header -->
+
+    <div role="main" class="ui-content jqm-content">
+        <p> Five minutes of light cardio to warm up. Train heavy, but don't train to failure</p>
+        <ul data-role="listview">
+            <li data-role="collapsible" data-iconpos="left" data-shadow="false" data-corners="false">
+                    <h2>Monday</h2>
+                <ul data-role="listview" data-shadow="false" data-corners="false">
+                    <li><a href="#" id="imgtrig1_1"><img src="images/bentrow.jpg">
+
+                        <h2>Bent over barbell rows</h2>
+
+                        <p>do a couple warm up sets first - 5 X 8</p></a></li>
+                    <li><a href="#" id="imgtrig1_11"><img src="images/barshrug.jpg">
+
+                        <h2>Barbell shoulder shrugs</h2>
+
+                        <p>5 X 10</p></a></li>
+                    <li><a href="#" id="imgtrig1_111"><img src="images/legext.jpg">
+
+                        <h2>Leg extensions</h2>
+
+                        <p>5 X 10</p></a></li>
+                    <li><a href="#" id="imgtrig1_1111"><img src="images/legcurls.jpg">
+
+                        <h2>Leg curls</h2>
+
+                        <p>5 X 10</p></a></li>
+                    <li><a href="#" id="imgtrig1_11111"><img src="images/seatcalf.jpg">
+
+                        <h2>Seated calf raise</h2>
+
+                        <p>5 X 10</p></a></li>
+                    <li><a href="#" id="imgtrig1_111111"><img src="images/situp.jpg">
+
+                        <h2>Incline sit ups</h2>
+
+                        <p>3 X 10-20</p></a></li>
+                </ul>
+            </li>
+
+            <li data-role="collapsible" data-iconpos="left" data-shadow="false" data-corners="false">
+                    <h2>Tuesday</h2>
+                <ul data-role="listview" data-shadow="false" data-corners="false">
+
+                </ul>
+            </li>
+
+            <li data-role="collapsible" data-iconpos="left" data-shadow="false" data-corners="false">
+                    <h2>Thursday</h2>
+                <ul data-role="listview" data-shadow="false" data-corners="false">
+
+                </ul>
+            </li>
+
+            <li data-role="collapsible" data-iconpos="left" data-shadow="false" data-corners="false">
+                    <h2>Friday</h2>
+
+        </ul>
+        </li>
+
+        </ul>
+    </div>
+    <!-- /content -->
+
+    <div data-role="footer">
+        <h4>Page Footer</h4>
+    </div>
+</div>
+
+
+
+
+<div data-role="popup" id="popupBasic" data-theme="a"><p> popup contents</p></div>
+
+<div data-role="panel" id="leftpanel" data-position="left" >
+    <div class="jqm-navmenu-panel jqm-panel-page-nav">
+        <ul data-role="listview" data-role="listview" data-inset="false" data-divider-theme="a"
+            data-icon="false" >
+            <li><a href="#week123">Week 1, 2, 3</a></li>
+            <li><a href="#week456">Week 4, 5, 6</a></li>
+            <li><a href="#week789">Week 7, 8, 9</a></li>
+            <li><a href="#week101112">Week 10, 11, 12</a></li>
+        </ul>
+    </div>
+</div>
+<!-- /panel -->
+
+</body>
+
+</html>
